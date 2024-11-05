@@ -2,7 +2,7 @@
 """ Basic Flask app, Basic Babel setup
 """
 from flask import Flask, render_template, request
-from flask_babel import Babel, _
+from flask_babel import Babel
 
 
 class Config:
@@ -34,4 +34,4 @@ def index() -> str:
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host="localhost", port=5000)
