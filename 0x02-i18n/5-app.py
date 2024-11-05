@@ -2,7 +2,7 @@
 """ Basic Flask app, Basic Babel setup
 """
 from flask import Flask, render_template, request, g
-from flask_babel import Babel, _
+from flask_babel import Babel
 
 
 users = {
@@ -62,13 +62,7 @@ def get_locale() -> str:
 def index() -> str:
     """ return index page
     """
-    if g.user:
-        return render_template(
-            '5-index.html',
-            message=_('logged_in_as',
-                      username=g.user.get('name')))
-    else:
-        return render_template('5-index.html', message=_('not_logged_in'))
+    return render_template('5-index.html')
 
 
 if __name__ == "__main__":
